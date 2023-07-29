@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Category {
+extension UsageCategory {
     var categoryID: UUID {
         id ?? UUID()
     }
@@ -41,11 +41,11 @@ extension Category {
         return array.sorted()
     }
 
-    static var example: Category {
+    static var example: UsageCategory {
         let controller = DataController(inMemory: true)
         let viewContext = controller.container.viewContext
 
-        let category = Category(context: viewContext)
+        let category = UsageCategory(context: viewContext)
         category.id = UUID()
         category.name = "Example Category"
         category.creationDate = .now
@@ -56,8 +56,8 @@ extension Category {
     }
 }
 
-extension Category: Comparable {
-    public static func <(lhs: Category, rhs: Category) -> Bool {
+extension UsageCategory: Comparable {
+    public static func <(lhs: UsageCategory, rhs: UsageCategory) -> Bool {
         let left = lhs.categoryCreationDate
         let right = rhs.categoryCreationDate
 

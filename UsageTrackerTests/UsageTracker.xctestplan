@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "B113A0A9-B6F1-488C-85D3-DB76FE983A27",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:UsageTracker.xcodeproj",
+      "identifier" : "A10B47F42A485233006F96E5",
+      "name" : "UsageTracker"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:UsageTracker.xcodeproj",
+        "identifier" : "A1FA7A7E2A65508600D0B27F",
+        "name" : "UsageTrackerTests"
+      }
+    }
+  ],
+  "version" : 1
+}

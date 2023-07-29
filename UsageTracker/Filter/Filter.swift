@@ -12,7 +12,7 @@ struct Filter: Identifiable, Hashable {
     var name: String
     var icon: String
     var minModificationDate = Date.distantPast
-    var category: Category?
+    var category: UsageCategory?
     var averageAmount: Int
     var averagePrice: Int
     var unit: String

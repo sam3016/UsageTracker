@@ -48,6 +48,7 @@ struct ContentViewToolbar: View {
             } label: {
                 Label("Chart", systemImage: "chart.xyaxis.line")
             }
+            .disabled(getUsageData().count == 0)
             .sheet(isPresented: $showingChart) {
                 GroupBox("Usage Amount") {
                     Chart {

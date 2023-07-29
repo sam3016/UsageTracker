@@ -32,8 +32,8 @@ extension Usage {
         set { price = newValue }
     }
 
-    var usagesCategory: [Category] {
-        let result = category?.allObjects as? [Category] ?? []
+    var usagesCategory: [UsageCategory] {
+        let result = category?.allObjects as? [UsageCategory] ?? []
         return result.sorted()
     }
 

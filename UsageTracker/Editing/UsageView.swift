@@ -11,7 +11,7 @@ struct UsageView: View {
     @EnvironmentObject var dataController: DataController
     @ObservedObject var usage: Usage
 
-    @FetchRequest(sortDescriptors: [SortDescriptor(\.name)]) var categories: FetchedResults<Category>
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.name)]) var categories: FetchedResults<UsageCategory>
 
     @FocusState private var amountIsFocused: Bool
     @FocusState private var priceIsFocused: Bool
@@ -26,7 +26,7 @@ struct UsageView: View {
 
             Section(header: Text("Start Date")) {
                 DatePicker(selection: $usage.usageStartDate, in: ...Date(), displayedComponents: .date) {
-                    Text("Select a start Date")
+                    Text("Select a Start Date")
                 }
             }
 
@@ -36,7 +36,7 @@ struct UsageView: View {
                     in: usage.usageStartDate...,
                     displayedComponents: .date
                 ) {
-                    Text("Select an end date")
+                    Text("Select an End Date")
                 }
             }
 

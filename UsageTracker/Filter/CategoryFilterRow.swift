@@ -35,7 +35,7 @@ struct CategoryFilterRow: View {
                             }
                         }
 
-                    Text("Average Amount: \(filter.averageAmount) \(filter.unit)")
+                    Text("Average Amount: \(filter.averageAmount)\(filter.unit)")
                         .font(.caption2)
                         .foregroundColor(.secondary)
 
@@ -47,9 +47,6 @@ struct CategoryFilterRow: View {
         }
         .accessibilityElement()
         .accessibilityLabel(filter.name)
-//        .accessibilityHint("Next is" + filter.estimateDate.formatted(date: .abbreviated, time: .omitted)
-//        )
-//        .accessibilityInputLabels([filter.name, filter.estimateDate.formatted(date: .abbreviated, time: .omitted)])
     }
 }
 

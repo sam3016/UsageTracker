@@ -12,13 +12,13 @@ struct SidebarView: View {
     let smartFilter: [Filter] = [.recent]
     let units = ["m³", "kwh"]
 
-    @FetchRequest(sortDescriptors: [SortDescriptor(\.name)]) var categories: FetchedResults<Category>
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.name)]) var categories: FetchedResults<UsageCategory>
 
-    @State private var categoryToRename: Category?
+    @State private var categoryToRename: UsageCategory?
     @State private var renamingCategory = false
     @State private var categoryName = ""
 
-    @State private var categoryToSelection: Category?
+    @State private var categoryToSelection: UsageCategory?
     @State private var selectUnit = false
     @State private var categoryUnit = ""
 

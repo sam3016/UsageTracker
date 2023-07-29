@@ -39,8 +39,20 @@ class DataController: ObservableObject {
         return dataController
     }()
 
+    static let model: NSManagedObjectModel = {
+        guard let url = Bundle.main.url(forResource: "Model", withExtension: "momd") else {
+            fatalError("Failed to locate model file.")
+        }
+
+        guard let managedObjectModel = NSManagedObjectModel(contentsOf: url) else {
+            fatalError("Failed to load model file.")
+        }
+
+        return managedObjectModel
+    }()
+
     init(inMemory: Bool = false) {
-        container = NSPersistentCloudKitContainer(name: "Model")
+        container = NSPersistentCloudKitContainer(name: "Model", managedObjectModel: Self.model)
 
         if inMemory {
             container.persistentStoreDescriptions.first?.url = URL(filePath: "/dev/null")
@@ -83,7 +95,7 @@ class DataController: ObservableObject {
         let viewContext = container.viewContext
 
         for categoryCount in 1...5 {
-            let category = Category(context: viewContext)
+            let category = UsageCategory(context: viewContext)
             category.id = UUID()
             category.name = "Category \(categoryCount)"
             category.creationDate = .now
@@ -134,7 +146,7 @@ class DataController: ObservableObject {
     }
 
     func deleteAll() {
-        let request1: NSFetchRequest<NSFetchRequestResult> = Category.fetchRequest()
+        let request1: NSFetchRequest<NSFetchRequestResult> = UsageCategory.fetchRequest()
         delete(request1)
 
         let request2: NSFetchRequest<NSFetchRequestResult> = Usage.fetchRequest()
@@ -168,9 +180,9 @@ class DataController: ObservableObject {
     }
 
     func newCategory() {
-        let category = Category(context: container.viewContext)
+        let category = UsageCategory(context: container.viewContext)
         category.id = UUID()
-        category.name = "New Category"
+        category.name = NSLocalizedString("New Category", comment: "New Category")
         category.creationDate = .now
         category.averageAmount = 0.0
         category.averagePrice = 0.0
@@ -194,7 +206,7 @@ class DataController: ObservableObject {
         selectedUsage = usage
     }
 
-    func averageAmount(category: Category) {
+    func averageAmount(category: UsageCategory) {
         let usages = category.categoryUsages.map { $0.amount }
 
         let sum = Int(usages.reduce(0, +))
@@ -204,7 +216,7 @@ class DataController: ObservableObject {
         save()
     }
 
-    func averagePrice(category: Category) {
+    func averagePrice(category: UsageCategory) {
         let usages = category.categoryUsages.map { $0.price }
 
         let sum = Int(usages.reduce(0, +))
@@ -212,5 +224,9 @@ class DataController: ObservableObject {
         category.averagePrice = Double(sum / count)
 
         save()
+    }
+
+    func count<T>(for fetchRequest: NSFetchRequest<T>) -> Int {
+            (try? container.viewContext.count(for: fetchRequest)) ?? 0
     }
 }
