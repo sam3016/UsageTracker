@@ -26,6 +26,7 @@
 		A10B48202A48862F006F96E5 /* UsageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10B481F2A48862F006F96E5 /* UsageView.swift */; };
 		A1319D542A6C127E00DE77AA /* DevelopmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1319D532A6C127E00DE77AA /* DevelopmentTests.swift */; };
 		A13FE7652A56EA5F00A67789 /* LineChartDataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FE7642A56EA5F00A67789 /* LineChartDataPoint.swift */; };
+		A191FF642A8242BE00778180 /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A191FF632A8242BE00778180 /* ExtensionTests.swift */; };
 		A1A0338D2A586834009033C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A1A0338F2A586834009033C4 /* Localizable.strings */; };
 		A1FA7A822A65508600D0B27F /* UsageTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FA7A812A65508600D0B27F /* UsageTrackerTests.swift */; };
 		A1FA7A8A2A6550EE00D0B27F /* CategoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FA7A892A6550EE00D0B27F /* CategoryTests.swift */; };
@@ -62,6 +63,7 @@
 		A10B481F2A48862F006F96E5 /* UsageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageView.swift; sourceTree = "<group>"; };
 		A1319D532A6C127E00DE77AA /* DevelopmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopmentTests.swift; sourceTree = "<group>"; };
 		A13FE7642A56EA5F00A67789 /* LineChartDataPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartDataPoint.swift; sourceTree = "<group>"; };
+		A191FF632A8242BE00778180 /* ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
 		A1A0338E2A586834009033C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A1A033902A586837009033C4 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		A1A033912A586838009033C4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				A1FA7A812A65508600D0B27F /* UsageTrackerTests.swift */,
 				A1FA7A892A6550EE00D0B27F /* CategoryTests.swift */,
 				A1319D532A6C127E00DE77AA /* DevelopmentTests.swift */,
+				A191FF632A8242BE00778180 /* ExtensionTests.swift */,
 			);
 			path = UsageTrackerTests;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				A1FA7A822A65508600D0B27F /* UsageTrackerTests.swift in Sources */,
 				A1FA7A8A2A6550EE00D0B27F /* CategoryTests.swift in Sources */,
 				A1319D542A6C127E00DE77AA /* DevelopmentTests.swift in Sources */,
+				A191FF642A8242BE00778180 /* ExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

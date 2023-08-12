@@ -22,6 +22,10 @@ extension Usage {
         set { endDate = newValue }
     }
 
+    var usageCreationDate: Date {
+        creationDate ?? .now
+    }
+
     var usageAmount: Double {
         get { amount }
         set { amount = newValue }

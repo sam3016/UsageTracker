@@ -162,6 +162,9 @@ class DataController: ObservableObject {
         if let category = filter.category {
             let categoryPredicate = NSPredicate(format: "category CONTAINS %@", category)
             predicates.append(categoryPredicate)
+        } else {
+            let datePredicate = NSPredicate(format: "endDate > %@", filter.minModificationDate as NSDate)
+            predicates.append(datePredicate)
         }
 
         let trimmedFilterText = filterText.trimmingCharacters(in: .whitespaces)
